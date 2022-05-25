@@ -16,7 +16,10 @@ export class ChatComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.messageList = this._chat.messageList
+    this._chat.listSubject.subscribe({
+      next : (data : Message[]) => this.messageList = data
+    })
+    this._chat.emitList()
     this._chat.connecting()
   }
 
