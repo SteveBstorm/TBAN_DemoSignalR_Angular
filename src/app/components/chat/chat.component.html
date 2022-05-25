@@ -1,0 +1,14 @@
+<p>chat works!</p>
+<div style="border : black 1px solid">
+  <ul>
+    <li *ngFor="let m of messageList">
+      <div [ngClass]="m.sender == sender ? 'sender' : 'receiver'"><b>{{m.sender}}</b> : {{m.content}}</div>
+    </li>
+  </ul>
+</div>
+<p>
+  Votre nom : <input type="text" [(ngModel)]="sender"><br />
+  Votre message : <input type="text" [(ngModel)]="message">
+  <button (click)="send()">Envoyer</button>
+</p>
+

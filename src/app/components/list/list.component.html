@@ -1,0 +1,9 @@
+<p>list works!</p>
+<ul *ngIf="liste">
+  <li *ngFor="let a of liste">
+    <p>Nom : {{a.label}}</p>
+    <p>Prix : {{a.price}} euro</p>
+    <p>{{a.description}}</p>
+    <hr />
+  </li>
+</ul>
